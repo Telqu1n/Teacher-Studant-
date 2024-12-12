@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css  %}
+  <link rel="stylesheet" href="{% static 'test1/style.css' %}"> 
+ {% endblock  %}
+
+{% block title %}
+Hello teachers 
+{% endblock %}
+
+{% block body %}
+<header>
+  <h1>Hear are all of the teachers </h1>
+</header>
+
+<section>
+  <main>
+    <div id="list">
+    {% for teacher_list in teacher_list %}
+      <ul>
+        <li>
+          {{ teacher_list.first_name }} {{ teacher_list.last_name }}
+        </li>
+      </ul>
+    </div>
+    </main>
+  </section>
+  {% endfor %}
+
+  <div id="back">
+  <p> <a href="{% url 'index' %}">back to home</a></p>
+  {% endblock %}
+</div>

@@ -1,0 +1,26 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+{% block css  %}
+  <link rel="stylesheet" href="{% static 'test1/style.css' %}"> 
+ {% endblock  %}
+
+{% block title %} 
+Welcome to my Teaching website
+ {%endblock %} 
+
+
+{% block body %}
+<header>
+  <h1>Welcome to my Teaching website</h1>
+</header>
+<section class="main">
+  <main>
+    <h1 class="heading">Are you a:</h1>
+    <div id="option">
+      <p id="option1"><a href=" {% url 'student' %} ">Student</a></p>
+      <p id = "option2"><a href=" {% url 'teacher' %} ">Teacher</a></p>
+    </div>
+  </main>
+</section>
+{% endblock %}
